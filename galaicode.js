@@ -8,6 +8,20 @@ document,addEventListener(`DOMContentLoaded`, () => {
 
     // 2. Load tasks from local storage when the page loads
         let tasks = JSON.parse(localStorage.getItem(`tasks`)) || [];
+        
+        const sampleTaskID = 1000;
+        const sampleTaskExistsInLS = tasks.some(t => t.id === sampleTaskID);
+
+        if (document.querySelector(`[data-id="${sampleTaskID}"]`) && !sampleTaskExistsInLS) {
+            const sampleTask = {
+                id: sampleTaskID,
+                content: "Task content", 
+                completed: false
+            };
+            tasks.push(sampleTask);
+            saveTasks(); 
+        }
+
         tasks.forEach(task => renderTask(task));
 
     // 3. CAP NHAT TRANG THAI NUT 'Clear ALL'
@@ -162,9 +176,12 @@ document,addEventListener(`DOMContentLoaded`, () => {
         }
 
         const taskIndex = tasks.findIndex(t => t.id === taskID);
+        let isCompleted = false;
+
         if (taskIndex !== -1) {
             tasks[taskIndex].content = newContent;
             saveTasks();
+            isCompleted = tasks[taskIndex].completed;
         }
 
         const newSpan = document.createElement('span');
