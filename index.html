@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>TO-DO LIST</h1>
+    </header>
+    <div class="container">
+        <form class="form">
+            <input id="input_task" type="text" placeholder="Enter your task here">
+            <input id="add_task" value="Add Task" type="submit">
+        </form>
+    </div>
+    <fieldset class="fieldset">
+        <ul class="todolist">
+            <li class="task_item">
+                <div class="left">
+                    <input type="checkbox" class="check_task">
+                    <span class="task_content">Task content</span>
+                </div>
+                <div class="right">
+                    <button class="edit_btn">✏️</button>
+                    <button class="delete_btn">❌</button>
+                </div>
+            </li>
+        </ul>            
+    </fieldset>
+<button class="clear_all">Clear All</button>  
+<script src="galaicode.js"></script>  
+</body>
+</html>

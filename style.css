@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* -----BASIC RESET----- */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', poppins, sans-serif;
+}
+
+body{
+    background: #ede7f6;
+    padding: 40px 0;
+}
+
+/* -----HEADER----- */
+.header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* -----TO DO LIST----- */
+header h1{
+    background-color: #6200ee;
+    color: #FFFFFF;
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* -----FORM CONTAINER----- */
+.container{
+    width: 420px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.15);
+}
+
+/* -----FORM----- */
+.form{
+    display: flex;
+    gap: 8px;
+}
+
+/* -----INPUT NHAP TASK----- */
+#input_task{
+    flex: 1;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 2px solid #DDD;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.25s;
+}
+
+#input_task:focus {
+    border-color: #333333;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* -----ADD TASK BUTTON----- */
+#add_task{
+    padding: 12px 18px;
+    border: none;
+    background: #EEEEEE;
+    color: #333333;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+#add_task:hover{
+    background: #690aee;
+    transform: translateY(-1px);
+    color: #fff;
+}
+
+#add_task:active {
+    transform: scale(0.95);
+}
+
+.fieldset{
+    width: 420px;
+    margin: 0 auto;
+    padding: 20px 20px 20px;
+    border: 2px solid hsl(265, 75%, 70%);
+    border-radius: 12px;
+}
+
+.todolist li{
+    list-style-type: none;
+}
+
+.task_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7418f6;
+    color: #fff;
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.task_content{
+    margin-left: 10px;
+    flex-grow: 1;
+    word-break: break-all;
+    font-weight: 600;
+}
+
+.task_content.completed{
+    text-decoration: line-through;
+    text-decoration-color: #eefe07;
+    text-decoration-thickness: 1.5px;
+}
+
+.check_task{
+    width: 18px;
+    height: 14px;
+    min-width: 18px;
+}
+
+.edit_input{
+    flex-grow: 1;
+    margin-left: 10px;
+    background: #5515b6; 
+    color: #fff;
+    border: 1px solid #999;
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 1em;
+    font-family: inherit;
+    outline: none;
+}
+
+.editing .task_content, 
+.editing .check_task {
+    display: none; 
+}
+
+.right{
+    display: flex;
+    gap: 7px;
+    margin-left: 10px;
+    min-width: 60px;
+}
+
+.edit_btn, .delete_btn{
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 3px;
+    border: none;
+    transition: 0.1s;
+    background: #FFFFFF;
+}
+
+.clear_all:disabled {
+    background-color: #f19a95; 
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.6;
+}
+
+.edit_btn:hover, .delete_btn:hover {
+    transform: scale(0.95);
+}
+
+.clear_all{
+    display: block;
+    width: 150px;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+    background-color: #d62619dd;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 400;
+    transition: background-color 0.2s;
+}
+
+.clear_all:hover{
+    background-color: #ff0000;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .container, .fieldset {
+        padding: 15px;
+    }
+
+    .form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #add_task {
+        width: 100%;
+    }
+}
